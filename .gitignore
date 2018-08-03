@@ -2,3 +2,4 @@ emails.csv
 .ipynb_checkpoints/
 *.zip
 *.pkl
+*.p

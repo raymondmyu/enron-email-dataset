@@ -1,0 +1,140 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="vis.min.css">
+<script src="vis.min.js"></script>
+
+
+<style type="text/css">
+ 
+.network {
+  display:block;
+  width:100%;
+  height:1200px;
+}
+ 
+</style>
+
+<div class="container-fluid network">Network Graph</div>
+<script src='output/nodes.js'></script>
+<script src='output/edges.js'></script>
+<script>
+//     var nodes = [];
+//     var edges = [];
+    
+//     $.ajax({
+//         url: 'output/nodes.json',
+//         async: false,
+//         dataType: 'json',
+//         success: function(d) { nodes = d }
+//     })
+//     $.ajax({
+//         url: 'output/edges.json',
+//         async: false,
+//         dataType: 'json',
+//         success: function(d) { edges = d }
+//     })
+    
+ 
+   var data = {
+ 
+        nodes: nodes,
+ 
+        edges: edges
+ 
+    };    
+    
+    var options = {
+groups:{"source1":{
+ 
+          color:{
+ 
+             background:'red',
+ 
+             border:'maroon'
+ 
+                },
+ 
+          shadow:{enabled:true,
+ 
+                  color:'rgba(0,0,0,0.5)',
+ 
+                  x:6,
+ 
+                  y:6 
+ 
+                 }
+ 
+              
+ 
+           },
+ 
+           "source2":{
+ 
+          color:{background:'blue',
+ 
+             border:'navy'},
+ 
+          shadow:{enabled:true,
+ 
+                  color:'rgba(0,0,0,0.5)',
+ 
+                  x:6,
+ 
+                  y:6 
+ 
+                 }
+ 
+              
+ 
+           },
+ 
+           "word":{
+ 
+          color:{background:'white',
+ 
+             border:'darkGreen'},
+ 
+          shadow:{enabled:true,
+ 
+                  color:'rgba(0,0,0,0.5)',
+ 
+                  x:6,
+ 
+                  y:6 
+ 
+                 }
+ 
+              
+ 
+           }, 
+ 
+          "person":{
+ 
+          color:{background:'gold',
+ 
+             border:'brown'},
+ 
+          font:{color:'black',size:14},
+ 
+           shadow:{enabled:true,
+ 
+                  color:'rgba(0,0,0,0.5)',
+ 
+                  x:6,
+ 
+                  y:6 
+ 
+                 }
+ 
+              
+ 
+           }
+       }
+        
+        
+    };
+ 
+    var container = document.querySelector('.network');
+ 
+    network = new vis.Network(container, data, options);
+ 
+</script>
